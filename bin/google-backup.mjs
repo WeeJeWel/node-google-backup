@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
+import path from 'path';
+
 import { program } from 'commander';
 import GoogleBackup from '../lib/GoogleBackup.mjs';
 
@@ -9,8 +11,9 @@ const { version } = JSON.parse(await fs.promises.readFile(new URL('../package.js
 
 program
   .version(version)
-  .option('-u, --username', 'Google Username', process.env.GOOGLE_USERNAME)
-  .option('-p, --password', 'Google App Password', process.env.GOOGLE_PASSWORD)
+  .option('-u, --username', 'Google Username', process.env.GOOGLE_BACKUP_USERNAME)
+  .option('-p, --password', 'Google App Password', process.env.GOOGLE_BACKUP_PASSWORD)
+  .option('-f, --filepath', 'Backup Filepath', process.env.GOOGLE_BACKUP_FILEPATH)
   .option('-s, --services <services>', 'Services to backup', value => {
     return value.split(',').map(value => value.trim());
   }, ['mail', 'calendar', 'contacts'],
@@ -22,6 +25,7 @@ const options = program.opts();
 const googleBackup = new GoogleBackup({
   username: options.username,
   password: options.password,
+  filepath: path.resolve(options.filepath),
 });
 
 await Promise.all([

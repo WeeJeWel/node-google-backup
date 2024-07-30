@@ -16,6 +16,7 @@
     "fs-extra": "^11.2.0",
     "imap-simple": "^5.1.0",
     "mailparser": "^3.7.1",
-    "tsdav": "^2.1.0"
+    "tsdav": "^2.1.0",
+    "vcard-parser": "^1.0.0"
   }
 }
