@@ -11,9 +11,9 @@ const { version } = JSON.parse(await fs.promises.readFile(new URL('../package.js
 
 program
   .version(version)
-  .option('-u, --username', 'Google Username', process.env.GOOGLE_BACKUP_USERNAME)
-  .option('-p, --password', 'Google App Password', process.env.GOOGLE_BACKUP_PASSWORD)
-  .option('-f, --filepath', 'Backup Filepath', process.env.GOOGLE_BACKUP_FILEPATH)
+  .option('-u, --username <username>', 'Google Username')
+  .option('-p, --password <password>', 'Google App Password')
+  .option('-f, --filepath <filepath>', 'Backup Filepath')
   .option('-s, --services <services>', 'Services to backup', value => {
     return value.split(',').map(value => value.trim());
   }, ['mail', 'calendar', 'contacts'],
@@ -23,9 +23,9 @@ program
 const options = program.opts();
 
 const googleBackup = new GoogleBackup({
-  username: options.username,
-  password: options.password,
-  filepath: path.resolve(options.filepath),
+  username: options.username ?? process.env.GOOGLE_BACKUP_USERNAME,
+  password: options.password ?? process.env.GOOGLE_BACKUP_PASSWORD,
+  filepath: options.filepath ?? process.env.GOOGLE_BACKUP_FILEPATH,
 });
 
 await Promise.all([
