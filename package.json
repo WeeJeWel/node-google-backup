@@ -1,0 +1,21 @@
+{
+  "name": "google-backup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "google-backup": "./bin/google-backup.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.7.1",
+    "tsdav": "^2.1.0"
+  }
+}
