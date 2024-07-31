@@ -29,8 +29,28 @@ Create a Google App Password at [https://myaccount.google.com/apppasswords](http
 
 ### 2. Run
 
+#### Node.js
+
+If you have Node.js already installed, run:
+
 ```bash
-$ npx -y google-backup --username "john.doe@gmail.com" --password "abcd efgh ijkl mnop" --filepath "~/Backups/Google/"
+$ npx -y google-backup \
+  --username "john.doe@gmail.com" \
+  --password "abcd efgh ijkl mnop" \
+  --filepath "~/Backups/Google/"
 ```
 
 > Hint: You can schedule this in a cronjob for automated backups.
+
+#### Docker
+
+If you prefer Docker, this is an example how to run: 
+
+```bash
+$ docker run \
+  --env GOOGLE_BACKUP_USERNAME="john.doe@gmail.com" \
+  --env GOOGLE_BACKUP_PASSWORD="abcd efgh ijkl mnop" \
+  --env GOOGLE_BACKUP_FILEPATH="/backups" \
+  --volume="/home/john/backups:/backups/" \
+  ghcr.io/weejewel/google-backup
+```
