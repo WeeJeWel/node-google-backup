@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Set environment variables
-      run: echo RELEASE=$(cat ./package.json | jq -r .release) >> $GITHUB_ENV
+      run: echo RELEASE=$(cat ./package.json | jq -r .version) >> $GITHUB_ENV
     
     - name: Build & Publish Docker Image
       uses: docker/build-push-action@v5
