@@ -1,0 +1,12 @@
+services:
+  google-backup:
+    image: google-backup
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GOOGLE_BACKUP_USERNAME
+      - GOOGLE_BACKUP_PASSWORD
+      - GOOGLE_BACKUP_FILEPATH=/backups/
+    volumes:
+      - ./backups:/backups
