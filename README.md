@@ -2,7 +2,7 @@
 
 This module automatically downloads your Google Mail, Contacts & Calendar to separate files. It'll sync only new Mails, Contacts & Events.
 
-This tool will output the following directory structue:
+This tool will output the following directory structure:
 
 ```
 .
