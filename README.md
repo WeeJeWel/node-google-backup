@@ -18,16 +18,18 @@ This tool will output the following directory structure:
     ├── By ID
     │   └── *.eml
     ├── By Thread
-        ├── <...>
-            └── *.eml
+    │   └── <...>
+    │       └── *.eml
     └── By Label
+        ├── <...>
+        │   └── *.eml
         └── [Gmail]
-            └── All Mail
-                └── *.eml
-            └── Sent
-                └── *.eml
+            ├── All Mail
+            │   └── *.eml
+            ├── Sent
+            │   └── *.eml
             └── <...>
-                └── *.eml
+                 └── *.eml
 ```
 
 > Note: All e-mail files are symlinked to 'By ID/*.eml'.
