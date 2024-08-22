@@ -1,6 +1,6 @@
 # Google Backup
 
-![NPM Version](https://img.shields.io/npm/v/google-backup)
+![NPM Version](https://npmjs.com/package/google-backup)
 [![Build & Publish NPM Package](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml)
 [![Build & Publish Docker Image](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml)
 
