@@ -1,6 +1,8 @@
 # Google Backup
 
-[![Build & Publish NPM Package](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml) [![Build & Publish Docker Image](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml)
+![NPM Version](https://img.shields.io/npm/v/google-backup)
+[![Build & Publish NPM Package](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/npm-publish.yml)
+[![Build & Publish Docker Image](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml/badge.svg)](https://github.com/WeeJeWel/node-google-backup/actions/workflows/ghcr-publish.yml)
 
 This module automatically downloads your Google Mail, Contacts & Calendar to separate files. It'll sync only new Mails, Contacts & Events.
 
