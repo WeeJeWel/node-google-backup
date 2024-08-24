@@ -10,11 +10,11 @@ This tool will output the following directory structure:
 
 ```
 .
-├── contacts
+├── Contacts
 │   └── *.vcf
-├── calendar
+├── Calendar
 │   └── *.ical
-└── mail
+└── Mail
     ├── By ID
     │   └── *.eml
     ├── By Thread
