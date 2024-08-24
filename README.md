@@ -10,16 +10,29 @@ This tool will output the following directory structure:
 
 ```
 .
-├── contacts/
+├── contacts
 │   └── *.vcf
-├── calendar/
+├── calendar
 │   └── *.ical
-└── mail/
-    ├── received/
+└── mail
+    ├── By ID
     │   └── *.eml
-    └── sent/
-        └── *.eml
+    ├── By Thread
+    │   └── <...>
+    │       └── *.eml
+    └── By Label
+        ├── <...>
+        │   └── *.eml
+        └── [Gmail]
+            ├── All Mail
+            │   └── *.eml
+            ├── Sent
+            │   └── *.eml
+            └── <...>
+                 └── *.eml
 ```
+
+> Note: All e-mail files are symlinked to 'By ID/*.eml'.
 
 ## Why?
 
