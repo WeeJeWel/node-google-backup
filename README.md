@@ -68,6 +68,6 @@ $ docker run \
   --env GOOGLE_BACKUP_USERNAME="john.doe@gmail.com" \
   --env GOOGLE_BACKUP_PASSWORD="abcd efgh ijkl mnop" \
   --env GOOGLE_BACKUP_FILEPATH="/backups" \
-  --volume="/home/john/backups:/backups/" \
+  --volume="~/Backups/Google/:/backups/" \
   ghcr.io/weejewel/google-backup
 ```
