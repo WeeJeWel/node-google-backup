@@ -71,3 +71,7 @@ $ docker run \
   --volume="~/Backups/Google/:/backups/" \
   ghcr.io/weejewel/google-backup
 ```
+
+## Also see
+
+Looking to backup iCloud Drive in a similar way? See [iCloud Backup](https://github.com/WeeJeWel/node-icloud-backup).
