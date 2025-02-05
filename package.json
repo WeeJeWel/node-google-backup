@@ -1,6 +1,6 @@
 {
   "name": "google-backup",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "scripts": {
     "start": "node ./bin/google-backup.mjs",
     "build:docker": "docker build -t google-backup .",
