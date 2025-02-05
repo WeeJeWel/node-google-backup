@@ -13,22 +13,24 @@ program
   .option('-u, --username <username>', 'Google Username')
   .option('-p, --password <password>', 'Google App Password')
   .option('-f, --filepath <filepath>', 'Backup Filepath')
-  .option('-s, --services <services>', 'Services to backup', value => {
-    return value.split(',').map(value => value.trim());
-  }, ['mail', 'calendar', 'contacts'],
-  )
+  .option('-s, --services <services>', 'Services to backup. Defaults to mail,calendar,contacts')
   .parse();
 
 const options = program.opts();
 
+const optionUsername = options.username ?? process.env.GOOGLE_BACKUP_USERNAME;
+const optionPassword = options.password ?? process.env.GOOGLE_BACKUP_PASSWORD;
+const optionFilepath = options.filepath ?? process.env.GOOGLE_BACKUP_FILEPATH;
+const optionServices = (options.services ?? process.env.GOOGLE_BACKUP_SERVICES ?? 'mail,calendar,contacts').split(',').map(service => service.trim());
+
 const googleBackup = new GoogleBackup({
-  username: options.username ?? process.env.GOOGLE_BACKUP_USERNAME,
-  password: options.password ?? process.env.GOOGLE_BACKUP_PASSWORD,
-  filepath: options.filepath ?? process.env.GOOGLE_BACKUP_FILEPATH,
+  username: optionUsername,
+  password: optionPassword,
+  filepath: optionFilepath,
 });
 
 await Promise.all([
-  options.services.includes('mail') && googleBackup.backupMail(),
-  options.services.includes('calendar') && googleBackup.backupCalendar(),
-  options.services.includes('contacts') && googleBackup.backupContacts(),
+  optionServices.includes('mail') && googleBackup.backupMail(),
+  optionServices.includes('calendar') && googleBackup.backupCalendar(),
+  optionServices.includes('contacts') && googleBackup.backupContacts(),
 ]);
