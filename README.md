@@ -14,7 +14,7 @@ This tool will output the following directory structure:
 ├── Contacts
 │   └── *.vcf
 ├── Calendar
-│   └── *.ical
+│   └── *.ics
 └── Mail
     ├── By ID
     │   └── *.eml
